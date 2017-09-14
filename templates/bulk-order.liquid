@@ -1,4 +1,4 @@
-﻿<h1>{{ 'bulk_order.general.title' | t }}</h1>
+<h1>{{ 'bulk_order.general.title' | t }}</h1>
 {% if form.errors %}
     <div class="note form-error">
         <p>{{ 'bulk_order.general.items_not_found_message' | t }}</p>
@@ -20,14 +20,39 @@
                     </div>
                 {% endfor %}
             </div>
-            <button class="btn" type="submit">{{ 'bulk_order.general.add_to_cart' | t }}</button>
+            <button id="bulk-sku-addButton" class="btn" type="submit">{{ 'bulk_order.general.add_to_cart' | t }}</button>
         </form>
     </div>
     <div class="grid-item one-third">
         <p>{{ 'bulk_order.general.csv_description' | t }}</p>
         <form action="{{ '/bulkorder/addcsvitems' | absolute_url }}" method="POST">
-            <textarea name="csv" placeholder="{{ 'bulk_order.general.csv_field_placeholder' | t }}" rows="20"></textarea>
-            <button class="btn" type="submit">{{ 'bulk_order.general.add_to_cart' | t }}</button>
+            <textarea id="field-bulk-csv" name="csv" placeholder="{{ 'bulk_order.general.csv_field_placeholder' | t }}" rows="20"></textarea>
+            <button id="bulk-csv-addButton" class="btn" type="submit">{{ 'bulk_order.general.add_to_cart' | t }}</button>
         </form>
     </div>
 </div>
+<script>
+    $("#bulk-sku-addButton").addClass('disabled');
+    $("#bulk-csv-addButton").addClass('disabled');
+        $('[id="field-bulk-sku"]').keyup(function() {
+            var empty = true;
+            $('[id="field-bulk-sku"]').each(function() {
+                if ($(this).val().length > 0) {        
+                    empty = false;
+                }
+            });
+            if (empty) {
+                $("#bulk-sku-addButton").addClass('disabled');
+            } else {
+                $('#bulk-sku-addButton').removeClass('disabled');
+            }
+        });
+         $('#field-bulk-csv').keyup(function() {
+            var empty = true;
+            if ($(this).val().length > 0) {        
+                $('#bulk-csv-addButton').removeClass('disabled');
+            }
+            else
+                $("#bulk-csv-addButton").addClass('disabled');
+         })
+</script>
