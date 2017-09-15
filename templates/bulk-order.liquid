@@ -34,25 +34,38 @@
 <script>
     $("#bulk-sku-addButton").addClass('disabled');
     $("#bulk-csv-addButton").addClass('disabled');
-        $('[id="field-bulk-sku"]').keyup(function() {
-            var empty = true;
-            $('[id="field-bulk-sku"]').each(function() {
-                if ($(this).val().length > 0) {        
-                    empty = false;
-                }
-            });
-            if (empty) {
-                $("#bulk-sku-addButton").addClass('disabled');
-            } else {
-                $('#bulk-sku-addButton').removeClass('disabled');
+    $('[id="field-bulk-sku"]').keyup(function() {
+        var empty = true;
+        $('[id="field-bulk-sku"]').each(function() {
+            if ($(this).val().length > 0) {
+                empty = false;
             }
         });
-         $('#field-bulk-csv').keyup(function() {
-            var empty = true;
-            if ($(this).val().length > 0) {        
-                $('#bulk-csv-addButton').removeClass('disabled');
-            }
-            else
-                $("#bulk-csv-addButton").addClass('disabled');
-         })
+        if (empty) {
+            $("#bulk-sku-addButton").addClass('disabled');
+        } else {
+            $('#field-bulk-csv').css("box-shadow", "");
+            $('#field-bulk-csv').css("border", "");
+            $('#bulk-sku-addButton').removeClass('disabled');
+        }
+    });
+
+    $('#field-bulk-csv').keyup(function() {
+        if ($(this).val().length = 0)
+            $("#bulk-csv-addButton").addClass('disabled');
+    });
+    $('#field-bulk-csv').keyup(function( e ) {
+        var regex = /([A-Z,0-9,a-z]+)([,]\d{1,})/;
+        var input = $(this).val();
+        if (input.match(regex)) {
+            $('#field-bulk-csv').css("border-color", "");
+            $('#field-bulk-csv').css("box-shadow", "");
+            $("#bulk-csv-addButton").removeClass('disabled');
+         }
+        else {
+            $("#bulk-csv-addButton").addClass('disabled');
+            $('#field-bulk-csv').css("border", "1px solid #f39f9f");
+            $('#field-bulk-csv').css("box-shadow", "0 0 5px #f39f9f");
+        }
+    });
 </script>
