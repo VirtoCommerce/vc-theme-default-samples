@@ -1,4 +1,4 @@
-﻿.cols {
+.cols {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -986,4 +986,10 @@ select {
 .list-table {
     position: relative;
     top: -40px;
+}
+
+.has-error {
+    border-color: #a94442;
+    -webkit-box-shadow: 0 0 5px #f39f9f;
+    box-shadow: 0 0 5px #f39f9f;
 }

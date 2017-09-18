@@ -1,4 +1,4 @@
-﻿var storefrontApp = angular.module('storefrontApp');
+var storefrontApp = angular.module('storefrontApp');
 
 
 storefrontApp.controller('mainController', ['$scope', '$location', '$window', 'customerService', 'storefrontApp.mainContext',
@@ -34,6 +34,19 @@ storefrontApp.controller('mainController', ['$scope', '$location', '$window', 'c
             $location.path(path);
             $scope.currentPath = $location.$$path.replace('/', '');
         };
+
+        $scope.atLeastOneNotEmpty = function () {
+            var bulkOrder = $scope.bulkOrder;
+            $scope.skuRowsIsEmpty = true;
+            if (angular.isDefined(bulkOrder)) {
+                angular.forEach(bulkOrder.skuRows, function (rows) {
+                    angular.forEach(rows, function (row) {
+                        if (row.length > 0)
+                            $scope.skuRowsIsEmpty = false;
+                    })
+                });
+            }
+        }
 
         $scope.stringifyAddress = function (address) {
             var stringifiedAddress = address.firstName + ' ' + address.lastName + ', ';
@@ -72,6 +85,6 @@ storefrontApp.controller('mainController', ['$scope', '$location', '$window', 'c
         $scope.getCustomer();
     }])
 
-.factory('storefrontApp.mainContext', function () {
-    return {};
-});
+    .factory('storefrontApp.mainContext', function () {
+        return {};
+    });
