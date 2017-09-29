@@ -9,7 +9,7 @@
     <div class="grid">
         <div class="cart-row">
             <div class="grid-item seven-twelfths">
-                <input id="field-bulk-sku"  name="[{{ item_index }}].Sku" type="text" value="" />
+                <input ng-model="bulkOrder.skuRows[{{ item_index }}].Sku" name="[{{ item_index }}].Sku" type="text" value="" />
             </div>
             <div class="grid-item five-twelfths">
                 <input name="[{{ item_index }}].Quantity" min="1" type="number" value="1" />

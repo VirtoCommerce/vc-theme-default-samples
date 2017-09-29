@@ -5,11 +5,13 @@
         <ul class="disc">
             {% for field in form.errors %}
             <li>{{ form.errors.messages[field] }}</li>
-            {% endfor %}
+          {{field}}
+          {% endfor %}
         </ul>
     </div>
-    {% endif %}
-    <div class="grid">
+{% endif %}
+
+<div ng-controller="bulkOrderController" class="grid">
         <div class="grid-item two-thirds">
             <p>{{ 'bulk_order.general.description' | t }}</p>
             <form name="skuForm" action="{{ '/bulkorder/addfielditems' | absolute_url }}" method="POST">
