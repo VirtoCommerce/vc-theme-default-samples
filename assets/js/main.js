@@ -35,19 +35,6 @@ storefrontApp.controller('mainController', ['$scope', '$location', '$window', 'c
             $scope.currentPath = $location.$$path.replace('/', '');
         };
 
-        $scope.atLeastOneNotEmpty = function () {
-            var bulkOrder = $scope.bulkOrder;
-            $scope.skuRowsIsEmpty = true;
-            if (angular.isDefined(bulkOrder)) {
-                angular.forEach(bulkOrder.skuRows, function (rows) {
-                    angular.forEach(rows, function (row) {
-                        if (row.length > 0)
-                            $scope.skuRowsIsEmpty = false;
-                    })
-                });
-            }
-        }
-
         $scope.stringifyAddress = function (address) {
             var stringifiedAddress = address.firstName + ' ' + address.lastName + ', ';
             stringifiedAddress += address.organization ? address.organization + ', ' : '';
