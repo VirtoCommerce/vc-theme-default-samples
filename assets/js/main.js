@@ -1,4 +1,4 @@
-﻿var storefrontApp = angular.module('storefrontApp');
+var storefrontApp = angular.module('storefrontApp');
 
 
 storefrontApp.controller('mainController', ['$scope', '$location', '$window', 'customerService', 'storefrontApp.mainContext',
@@ -72,6 +72,6 @@ storefrontApp.controller('mainController', ['$scope', '$location', '$window', 'c
         $scope.getCustomer();
     }])
 
-.factory('storefrontApp.mainContext', function () {
-    return {};
-});
+    .factory('storefrontApp.mainContext', function () {
+        return {};
+    });
