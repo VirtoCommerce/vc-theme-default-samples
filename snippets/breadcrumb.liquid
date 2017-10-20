@@ -15,7 +15,6 @@
     <span class="divider" aria-hidden="true">&rsaquo;</span>
     <span class="breadcrumb--truncate">{{ product.title }}</span>
   {%- elsif template contains 'collection' and collection.handle -%}
-    <span class="divider" aria-hidden="true">&rsaquo;</span>
     {%- if current_tags -%}
       {%- capture url -%}{{ collection.handle | absolute_url }}{%- endcapture -%}
       {{ collection.title | link_to: url }}
@@ -49,8 +48,16 @@
         {%- endcomment -%}
       {%- endfor -%}
     {%- else -%}
+      {%- for parent in collection.parents -%}
+        {%- unless parent.title == collection.title -%}
+          <span class="divider" aria-hidden="true">&rsaquo;</span>
+          {%- capture url -%}{{ parent.handle | absolute_url }}{%- endcapture -%}
+          {{ parent.title | link_to: url}}
+        {%- endunless -%}
+      {%- endfor -%}
+      <span class="divider" aria-hidden="true">&rsaquo;</span>
       <span>{{ collection.title }}</span>
-    {%- endif -%}
+  {%- endif -%}
   {%- elsif template == 'blog' -%}
     <span class="divider" aria-hidden="true">&rsaquo;</span>
     {%- if current_tags -%}
