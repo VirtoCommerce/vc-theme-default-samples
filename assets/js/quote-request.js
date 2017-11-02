@@ -1,4 +1,4 @@
-﻿var storefrontApp = angular.module('storefrontApp');
+var storefrontApp = angular.module('storefrontApp');
 
 storefrontApp.controller('quoteRequestController', ['$rootScope', '$scope', '$window', '$location', 'quoteRequestService', 'cartService',
     function ($rootScope, $scope, $window, $location, quoteRequestService, cartService) {
@@ -197,7 +197,7 @@ storefrontApp.controller('quoteRequestController', ['$rootScope', '$scope', '$wi
         quoteRequestService.getQuoteRequest(number).then(function (response) {
             var quoteRequest = response.data;
             if (!quoteRequest.billingAddress) {
-                if ($scope.customer.addresses.length) {
+                if ($scope.customer.addresses && $scope.customer.addresses.length) {
                     quoteRequest.billingAddress = angular.copy($scope.customer.addresses[0]);
                     quoteRequest.billingAddress.type = 'Billing';
                     if (quoteRequest.billingAddress.countryCode) {
