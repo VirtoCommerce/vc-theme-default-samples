@@ -171,10 +171,12 @@
             <div class="tab">
                 <div class="properties">
                     {% for property in product.properties %}
-                    <dl>
-                        <dt>{{ property.name }}</dt>
-                        <dd>{{ property.value }}</dd>
-                    </dl>
+                        {% if property.value %}
+                            <dl>
+                                <dt>{{ property.display_name }}</dt>
+                                <dd>{{ property.value }}</dd>
+                            </dl>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
