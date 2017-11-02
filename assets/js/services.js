@@ -162,6 +162,9 @@ storefrontApp.service('cartService', ['$http', function ($http) {
         },
         createOrder: function (bankCardInfo) {
             return $http.post('storefrontapi/cart/createorder', { bankCardInfo: bankCardInfo });
+        },
+        updateCartComment: function (cartComment) {
+            return $http.put('storefrontapi/cart/comment', { comment: cartComment });
         }
     }
 }]);
