@@ -1,13 +1,13 @@
-﻿var storefrontApp = angular.module('storefrontApp');
+var storefrontApp = angular.module('storefrontApp');
 
-storefrontApp.controller('productController', ['$rootScope', '$scope', '$window', 'dialogService', 'catalogService', 'cartService', 'quoteRequestService', 'customerService', 'listService',
-    function ($rootScope, $scope, $window, dialogService, catalogService, cartService, quoteRequestService, customerService, listService) {
+storefrontApp.controller('productController', ['$rootScope', '$scope', '$window', 'dialogService', 'catalogService', 'cartService', 'quoteRequestService', 'customerService', 'listService', '$localStorage',
+    function ($rootScope, $scope, $window, dialogService, catalogService, cartService, quoteRequestService, customerService, listService, $localStorage) {
     //TODO: prevent add to cart not selected variation
     // display validator please select property
     // display price range
 
     var allVariations = [];
-  
+    
     $scope.selectedVariation = {};
     $scope.allVariationPropsMap = {};
     $scope.productPrice = null;
@@ -74,6 +74,7 @@ storefrontApp.controller('productController', ['$rootScope', '$scope', '$window'
             _.each(_.keys(propertyMap), function (x) {
                 $scope.checkProperty(propertyMap[x][0])
             });
+           
             $scope.selectedVariation = product;
             compareProductInLists(product.id);
         });        

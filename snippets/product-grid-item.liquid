@@ -43,16 +43,15 @@
         </div>
         <div class="product-item--other" style="margin-bottom: 10px;">
          {% if product.available %}
-            <button class="btn btn-secondary AddShopCart" title="{{ 'products.general.add_to_cart' | t }}" style="width: 70%;" ng-click="addProductToCartById('{{ product.id }}', 1, $event)" ng-controller="productController" interactor-arg="{{ product.id }}">
+            <button class="btn btn-secondary AddShopCart" title="{{ 'products.general.add_to_cart' | t }}" ng-click="addProductToCartById('{{ product.id }}', 1, $event)" ng-controller="productController" interactor-arg="{{ product.id }}">
                 <span class="icon icon-cart"></span>
             </button>
              {% endif %}
             {% if settings.product_compare_enabled %}
-                <button class="btn btn-secondary" title="{{ 'products.compare_list.add_to_compare' | t }}" style="width: {% if product.available %}25{% else %}100{% endif %}%;" ng-click="addProductToCompareList('{{ product.id }}', $event)" ng-controller="productCompareListController">
-                    <span class="fa fa-bar-chart"></span>
-                </button>
-            {% endif %}
-        </div>
+                <add-to-compare-button custom-class="'vc-compare-button'"  product-id="'{{ product.id }}'" button-type="'small'">
+                </<add-to-compare-button>
+    {% endif %}
+</div>
         <p>{{ product.title }}</p>
         <div class="product-item--price" ng-if="!productListPricesLoaded">
             <span class="h1 medium--left">

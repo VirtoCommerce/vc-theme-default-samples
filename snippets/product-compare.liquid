@@ -1,7 +1,7 @@
-﻿<div ng-init="getProductProperties()" ng-controller="productCompareListController">
-    <div ng-if="!products.length">
+<div ng-controller="productCompareListController" ng-init="getProductProperties()">
+    <div ng-if="!products.length && loaded">
         <h2>{{ 'products.compare_list.compare_list_empty_header' | t }}</h2>
-        {% assign url = 'collections/all' | absolute_url %}
+        {% assign url = 'collections' | absolute_url %}
         <p>{{ 'products.compare_list.compare_list_empty_body' | t: url : url }}</p>
     </div>
     <div ng-if="products.length">
