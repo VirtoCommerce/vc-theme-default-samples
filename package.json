@@ -1,6 +1,6 @@
 {
-    "version": "1.0.1",
-    "name": "vc-default-theme",
+    "version": "1.1.0",
+    "name": "vc-theme-default",
     "author": "VirtoCommerce",
     "description": "Default theme for Storefront",
     "private": true,
@@ -35,7 +35,7 @@
         "gulp-clean": "^0.3.2",
         "gulp-concat": "^2.6.1",
         "gulp-eslint": "^4.0.0",
-        "gulp-exclude-gitignore": "^1.1.1", 
+        "gulp-exclude-gitignore": "^1.1.1",
         "gulp-filter": "^4.0.0",
         "gulp-htmlmin": "^3.0.0",
         "gulp-image": "^2.7.2",
@@ -59,14 +59,13 @@
     "engines": {
         "node": ">4.0.0"
     },
-    "homepage": "https://github.com/VirtoCommerce/vc-default-theme/",
+    "homepage": "https://github.com/VirtoCommerce/vc-theme-default/",
     "repository": {
         "type": "git",
-        "url": "https://github.com/VirtoCommerce/vc-default-theme.git"
+        "url": "https://github.com/VirtoCommerce/vc-theme-default.git"
     },
     "bugs": {
-        "url": "https://github.com/VirtoCommerce/vc-default-theme/issues"
+        "url": "https://github.com/VirtoCommerce/vc-theme-default/issues"
     },
-    "scripts": {
-    }
+    "scripts": {}
 }
