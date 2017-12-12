@@ -11,7 +11,7 @@
             {% for link in linklists[settings.footer_quicklinks_linklist].links %}
               <li><a href="{{ link.url }}">{{ link.title }}</a></li>
             {% else %}
-              {% capture theme_settings_footer_linklist_path %}<strong>Footer</strong> > <strong>Quick links link list</strong>{% endcapture %}
+              {% capture theme_settings_footer_linklist_path %}<strong>{{ 'layout.footer.footer' | t }}</strong> > <strong>{{ 'layout.footer.quick_links_list' | t }}</strong>{% endcapture %}
               {{ 'layout.footer.instructions_for_linklist_html' | t: theme_settings_link: theme_settings_link, theme_settings_footer_linklist_path: theme_settings_footer_linklist_path }}
             {% endfor %}
           </ul>
@@ -22,7 +22,7 @@
       <div class="grid-item medium--one-half large--five-twelfths">
         <h3>{{ 'layout.footer.get_in_touch' | t }}</h3>
         <p>
-            {{ settings.footer_content_text }}       
+            {{ 'layout.footer.footer_content_text' | t }}
         </p>
 
         {% if settings.footer_social_enable %}
