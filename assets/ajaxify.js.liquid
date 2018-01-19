@@ -371,7 +371,7 @@ var ajaxifyShopify = (function(module, $) {
     // Write a (hidden) Checkout button, a loader, and the extra view cart button
     var checkoutBtn = $('<a href="' + baseUrl + 'cart" class="flip-back" style="background-color: #C00; color: #fff;" id="flip-checkout">' + {{ 'cart.general.checkout' | t | json }} + '</a>').addClass($btnClass),
         flipLoader = $('<span class="ajaxifyCart-loader"></span>'),
-        flipExtra = $('<div class="flip-extra">' + {{ 'cart.general.or' | t | json }} + ' <a href="#" class="flip-cart">' + {{ 'cart.general.view_cart' | t | json }} + ' (<span></span>)</a></div>');
+        flipExtra = $('<div class="flip-extra">' + {{ 'common.or' | t | json }} + ' <a href="#" class="flip-cart">' + {{ 'cart.general.view_cart' | t | json }} + ' (<span></span>)</a></div>');
 
     // Append checkout button and loader
     checkoutBtn.insertAfter($addToCart);
@@ -420,7 +420,7 @@ var ajaxifyShopify = (function(module, $) {
     $modalOverlay.on('click', hideModal);
 
     // Create a close modal button
-    $modalContainer.prepend('<button class="ajaxifyCart--close" title="' + {{ 'cart.general.close_cart' | t | json }} + '">' + {{ 'cart.general.close_cart' | t | json }} + '</button>');
+    $modalContainer.prepend('<button class="ajaxifyCart--close" title="' + {{ 'dialog.close_cart' | t | json }} + '">' + {{ 'cart.general.close_cart' | t | json }} + '</button>');
     $closeCart = $('.ajaxifyCart--close');
     $closeCart.on('click', hideModal);
 

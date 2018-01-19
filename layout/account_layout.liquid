@@ -100,7 +100,7 @@
                         {% else %}
                         {{ 'layout.customer.sign_in' | t | customer_login_link }}
                         {% if shop.customer_accounts_optional %}
-                        <span class="site-header--spacer">{{ 'layout.customer.or' | t }}</span>
+                        <span class="site-header--spacer">{{ 'common.or' | t }}</span>
                         {{ 'layout.customer.create_account' | t | customer_register_link }}
                         {% endif %}
                         {% endif %}
@@ -117,7 +117,7 @@
                         </span>
                         <span ng-if="customer && !customer.isRegisteredUser" ng-cloak>
                             {{ 'layout.customer.sign_in' | t | customer_login_link }}
-                            <span class="site-header--spacer">{{ 'layout.customer.or' | t }}</span>
+                            <span class="site-header--spacer">{{ 'common.or' | t }}</span>
                             {{ 'layout.customer.create_account' | t | customer_register_link }}
                         </span>
                     </span>
@@ -132,7 +132,7 @@
                 {% if shop.quotes_enabled %}
                 <a class="header-cart-btn cart-toggle" ng-controller="actualQuoteRequestBarController" ng-click="outerRedirect(baseUrl + 'quoterequest/#/' + actualQuoteRequest.number)">
                     <span class="fa fa-calculator"></span>
-                    Quote <span id="quoteRequestCount" ng-class="{ 'visible-count': actualQuoteRequest.itemsCount > 0 }" ng-bind="actualQuoteRequest.itemsCount" ng-cloak></span>
+                    {{ 'layout.quotes.quote' | t }} <span id="quoteRequestCount" ng-class="{ 'visible-count': actualQuoteRequest.itemsCount > 0 }" ng-bind="actualQuoteRequest.itemsCount" ng-cloak></span>
                 </a>
                 {% endif %}
                 <a class="header-cart-btn cart-toggle" href="{{ 'cart' | absolute_url }}" ng-controller="cartBarController">
