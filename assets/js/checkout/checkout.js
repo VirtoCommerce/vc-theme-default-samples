@@ -1,4 +1,4 @@
-﻿//Call this to register our module to main application
+//Call this to register our module to main application
 var moduleName = "storefront.checkout";
 
 if (storefrontAppDependencies != undefined) {
@@ -145,7 +145,7 @@ angular.module(moduleName, ['credit-cards', 'angular.filter'])
         $scope.createOrder = function () {
             updatePayment($scope.checkout.payment).then(function () {
                 $scope.checkout.loading = true;
-                cartService.createOrder($scope.checkout.paymentMethod.card).then(function (response) {
+                cartService.createOrder($scope.checkout.paymentMethod.card || []).then(function (response) {
                     var order = response.data.order;
                     var orderProcessingResult = response.data.orderProcessingResult;
                     var paymentMethod = response.data.paymentMethod;
