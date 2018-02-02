@@ -235,6 +235,7 @@
             "product_added_request": "Product is added to quote request",
             "go_request": "Go to quote request",
             "update_quote": "Updating quote request...",
+            "product_added": "Product is added to cart",
             "placeholders": {
                 "product_search": "Start enter a SKU or product name to search..."
             }
