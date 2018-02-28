@@ -177,8 +177,8 @@ storefrontApp.service('listService', ['$http', function ($http) {
         contains: function (productId, listName) {
             return $http.get('storefrontapi/lists/' + listName +'/items/'+ productId + '/contains?t=' + new Date().getTime());
         },
-        filterListsByProduct: function (productId, listNames) {
-            return $http.post('storefrontapi/lists/filterlistsbyproduct', { productId: productId, listNames: listNames });
+        getListsWithProduct: function (productId, listNames) {
+            return $http.post('storefrontapi/lists/getlistswithproduct', { productId: productId, listNames: listNames });
         },
         addLineItem: function (productId, listName) {
             return $http.post('storefrontapi/lists/items', { productId: productId, listName: listName });

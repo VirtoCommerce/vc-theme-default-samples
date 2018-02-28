@@ -30,7 +30,7 @@ storefrontApp.controller('recentlyAddedListItemDialogController', ['$scope', '$w
         $scope.lists = lists;
 
         var listNames = _.pluck(lists, "name");
-        listService.filterListsByProduct(dialogData.id, listNames).then(function (result) {
+        listService.getListsWithProduct(dialogData.id, listNames).then(function (result) {
             var filteredNames = result.data;
 
             angular.forEach($scope.lists, function (list) {

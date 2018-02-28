@@ -140,7 +140,7 @@ storefrontApp.controller('productController', ['$rootScope', '$scope', '$window'
                 return;
 
             var listNames = _.pluck($scope.availableLists, "name");
-            listService.filterListsByProduct(product.id, listNames).then(function (result) {
+            listService.getListsWithProduct(product.id, listNames).then(function (result) {
                 if (result.data && listNames.length > result.data.length) {
                     $scope.addToWishlistDisabled = false;
                 } else {
