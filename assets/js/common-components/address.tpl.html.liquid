@@ -2,7 +2,7 @@
     <div class="form-fieldset" ng-init="$ctrl.setForm(addrForm)">
         <div class="form-group form-select" ng-class="{'keyuped': addrForm.Addresses.$modelValue }" ng-if="$ctrl.addresses.length">
             <label for="#" class="form-label">{{ 'checkout.address.selected_address' | t }}</label>
-            <select ng-model="$ctrl.address" ng-options="x as x.name for x in $ctrl.addresses" name="Addresses" class="form-input" size="1">
+            <select ng-model="$ctrl.address" ng-options="x as x.name for x in $ctrl.addresses track by x.name" name="Addresses" class="form-input" size="1">
                 <option value="">{{ 'checkout.shipping_address_select_placeholder' | t }}</option>
             </select>
         </div>
