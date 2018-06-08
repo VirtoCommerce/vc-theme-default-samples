@@ -55,9 +55,6 @@
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" ng-controller="mainController" ng-init="baseUrl='{{ '/' | absolute_url }}'">
     {% include 'google-tag-manager-body' %}
     {% include 'notification' %}
-    {% if can_track %}
-        {% include 'cookie-consent-banner' %}
-    {% endif %}
     {% include 'recently-added-cart-item-dialog' %}
     {% include 'recently-added-list-item-dialog' %}
     {% include 'recently-added-actual-quote-request-item-dialog' %}
@@ -167,6 +164,9 @@
     </main>
     {% if settings.product_compare_enabled %}
     {% include 'product-compare-list-dialog' %}
+    {% endif %}
+    {% if can_track %}
+        {% include 'cookie-consent-banner' %}
     {% endif %}
     {% include 'footer' %}
     <script>
