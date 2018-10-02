@@ -16,19 +16,20 @@
                 {{ 'checkout.invalid_coupon_code' | t }}
             </p>
         </div>
-        <div class="field" ng-class="{ 'field--show-floating-label': coupon.code, 'field--error': !$ctrl.coupon.appliedSuccessfully  }" ng-repeat="coupon in $ctrl.coupons">
-            <div class="field__input-btn-wrapper">
+        <div class="field" ng-class="{ 'field--show-floating-label': coupon.code, 'field--error': !coupon.appliedSuccessfully  }" ng-repeat="coupon in $ctrl.coupons">
+            <div class="field__input-btn-wrapper" style="align-items:center">
                 <div class="field__input-wrapper">
                     <span ng-bind="coupon.code"></span>
-                    <p class="field__message" ng-if="coupon.appliedSuccessfully">{{ 'checkout.coupon_applied_sucessfuly' | t }}</p>
-                    <p class="field__message field__message--error" ng-if="!coupon.appliedSuccessfully">{{ 'checkout.invalid_coupon_code' | t }}</p>
+
                 </div>
-                <button class="field__input-btn btn btn--default" type="button" ng-click="$ctrl.onRemoveCoupon({ coupon: coupon })" ng-class="{ 'btn--loading': coupon.processing }">
+                <button class="field__input-btn btn btn--default" type="button" style="width:82px; padding:0; height:40px" ng-click="$ctrl.onRemoveCoupon({ coupon: coupon })" ng-class="{ 'btn--loading': coupon.processing }">
                     <span class="btn__content visually-hidden-on-mobile">{{ 'checkout.remove' | t }}</span>
                     <i class="btn__content shown-on-mobile icon icon--arrow"></i>
                     <i class="btn__spinner icon icon--button-spinner"></i>
                 </button>
-            </div>           
+            </div>
+            <p class="field__message" ng-if="coupon.appliedSuccessfully">{{ 'checkout.coupon_applied_sucessfuly' | t }}</p>
+            <p class="field__message field__message--error" ng-if="!coupon.appliedSuccessfully">{{ 'checkout.invalid_coupon_code' | t }}</p>
         </div>
     </div>
 </form>
