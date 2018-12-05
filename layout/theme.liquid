@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% if settings.favicon_enable %}
-    <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+    <link rel="shortcut icon" href="{{ 'images/favicon.png' | asset_url }}" type="image/png" />
     {% endif %}
 
     <title>
@@ -64,7 +64,7 @@
                             {% endif %}
                             {% if settings.logo_use_image %}
                             <a href="{{ '/' | absolute_url }}" itemprop="url">
-                                <img alt="{{ shop.name }}" src="{{ 'logo.png' | asset_url }}" itemprop="logo" />
+                                <img alt="{{ shop.name }}" src="{{ 'images/logo.png' | asset_url }}" itemprop="logo" />
                             </a>
                             {% else %}
                             <a href="{{ '/' | absolute_url }}" itemprop="url">{{ shop.name }}</a>
