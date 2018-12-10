@@ -158,7 +158,7 @@
             {{ product.description }}
         </div>
 
-        {% if product.customer_reviews.size > 0 %}
+        {% if shop.customer_reviews_enabled and product.customer_reviews.size > 0 %}
         <h4>Customer reviews</h4>
         {% for review in product.customer_reviews limit:5 %}
         <p>
@@ -170,7 +170,7 @@
         </p>
         {% endfor %}
         {% endif %}
-        
+
         {% if settings.social_sharing_products %}
         {% include 'social-sharing' %}
         {% endif %}
