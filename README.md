@@ -155,6 +155,14 @@ gulp default
 ```
 manually when you need to bundle & minify theme files.
 
+### Note
+
+Each time you get theme sources from git or when you change dependencies in **bower.json**, you need to run the task  
+```
+gulp packJavaScript
+```
+that bundles 3rd party dependencies.
+
 ### Tips & tricks
 
 **Attention:** while theme including **bundlesconfig.json** file, you *must not* use [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) Visual Studio extension with theme. We're using gulp to bundle & minify files on theme, because it support a lot of possible customizations and has a plugins for css minification and correct source maps generation. Wrong source map generation and lack of css minification is a primary reason why we do not use Bundler & Minifier extension in Visual Studio.
@@ -172,6 +180,7 @@ The following gulp tasks available to you:
 4. **min** and **min:js**, **min:css**, **min:html**: minify all or specified types of files.
 6. **watch**: watching to any changes on bundled & configuration files and update bundles when any change occurs.
 7. **compress**: creates zip package with all needed files to deploy theme on storefront.
+8. **packJavaScript**: creates **scripts_dependencies.js** bundle for all 3rd party dependencies defined in **bower.json**.
 
 ## How to localize theme
 
