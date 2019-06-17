@@ -157,7 +157,11 @@ manually when you need to bundle & minify theme files.
 
 ### Note
 
-Each time you get theme sources from git or when you change dependencies in **bower.json**, you need to run the task  
+Each time you get theme sources from git or when you change dependencies in **bower.json**, you need to run
+```
+bower install
+```
+to build Bower dependencies and run the task  
 ```
 gulp packJavaScript
 ```

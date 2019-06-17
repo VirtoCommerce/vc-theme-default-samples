@@ -71,6 +71,6 @@
         "url": "https://github.com/VirtoCommerce/vc-theme-default/issues"
     },
     "scripts": {
-        "postinstall": "node_modules/.bin/bower install"
+        "postinstall": "node_modules/.bin/bower install --force-latest"
     }
 }
