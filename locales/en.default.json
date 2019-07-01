@@ -244,7 +244,7 @@
     "wishlist": {
         "general": {
             "title": "Lists",
-            "my_lists":  "Private lists",
+            "my_lists": "Private lists",
             "friends_lists": "Friends lists",
             "select_list": "Please select list",
             "remove": "Remove",
@@ -439,9 +439,8 @@
             "zip_valid": "Please enter your postal code",
             "shipping_address": "Shipping address",
             "same_address": "Shipping address is same as billing address",
-            "select_your": "Please select your"
-
-
+            "select_your": "Please select your",
+            "new_phone": "Add a phone number"
         },
         "login": {
             "title": "Login",
@@ -575,14 +574,14 @@
         },
         "recover_password": {
             "title": "Reset your password",
-            "email": "Email",
+            "email_or_login": "Email or Login",
             "submit": "Submit",
             "cancel": "Cancel",
-            "subtext": "We will send you an email to reset your password."
+            "subtext": "We will send you an email or sms to reset your password."
         },
         "reset_password": {
             "title": "Reset account password",
-            "subtext": "Enter a new password for {0}",
+            "subtext": "Enter a new password",
             "password": "Password",
             "password_confirm": "Confirm Password",
             "submit": "Reset Password"
@@ -608,13 +607,20 @@
             "submit": "Create",
             "cancel": "Return to Store"
         },
+        "phone_number": {
+            "manage": "Edit you phone number"
+        },
         "edit_profile": {
             "title": "Edit Profile",
             "first_name": "First Name",
             "last_name": "Last Name",
             "email": "Email",
             "submit": "Update",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "add": "Add",
+            "edit": "Edit",
+            "delete": "Delete",
+            "two_factor_auth": "Enable two factor authentication"
         },
         "change_password": {
             "title": "Change Password",
@@ -793,7 +799,8 @@
             "two_factor_auth": "Select Two-Factor Authentication Provider:",
             "submit": "Submit",
             "label": {
-                "code": "Code"
+                "code": "Code",
+                "checkbox": "Remember this device"
             },
             "placeholder": {
                 "enter_code": "Enter verification code here"
@@ -804,6 +811,46 @@
         "close": "Close",
         "close_cart": "Close Cart",
         "countinue_shop": "Continue shopping"
-
+    },
+    "error": {
+        "default_error": "An unknown failure has occurred.",
+        "duplicate_email": "Email is already taken.",
+        "duplicate_role_name": "Role name is already taken.",
+        "duplicate_user_name": "User name is already taken.",
+        "invalid_email": "Email is invalid.",
+        "invalid_password_hasher_compatibility_mode": "The provided PasswordHasherCompatibilityMode is invalid.",
+        "invalid_password_hasher_iteration_count": "The iteration count must be a positive integer.",
+        "invalid_role_name": "Role name is invalid.",
+        "invalid_token": "Invalid token.",
+        "invalid_user_name": "User name is invalid, can only contain letters or digits.",
+        "login_already_associated": "A user with this login already exists.",
+        "password_mismatch": "Incorrect password.",
+        "password_requires_digit": "Passwords must have at least one digit ('0'-'9').",
+        "password_requires_lower": "Passwords must have at least one lowercase ('a'-'z').",
+        "password_requires_non_alphanumeric": "Passwords must have at least one non alphanumeric character.",
+        "password_requires_unique_chars": "Passwords must use different characters.",
+        "password_requires_upper": "Passwords must have at least one uppercase ('A'-'Z').",
+        "password_too_short": "Passwords are too short.",
+        "user_already_has_password": "User already has a password set.",
+        "user_already_in_role": "User already in role specified.",
+        "user_locked_out": "User is locked out.",
+        "user_lockout_not_enabled": "Lockout is not enabled for this user.",
+        "user_name_not_found": "User does not exist.",
+        "login_failed": "Login attempt failed.",
+        "user_not_found": "User not found.",
+        "user_cannot_login_in_store": "User cannot login to current store.",
+        "account_is_blocked": "Account is blocked.",
+        "operation_failed": "Operation failed.",
+        "reset_password_is_turned_off": "Reset password by code is turned off.",
+        "invalid_url": "Url is invalid",
+        "reset_password_invalid_data": "Reset password data is invalid.",
+        "password_and_confirm_password_does_not_match": "Password and Confirm password doesn't match.",
+        "invitation_has_already_been_used": "Invitation has already been used.",
+        "customer_user_name": "User name is required",
+        "customer_password": "Password is invalid or required.",
+        "customer_password_confirmation": "Password confirmation is invalid or required",
+        "customer_token": "Code is invalid or required",
+        "customer_email": "Email is invalid or required"
+       
     }
 }
