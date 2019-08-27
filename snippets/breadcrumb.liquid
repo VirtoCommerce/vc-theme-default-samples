@@ -17,7 +17,7 @@
     <span class="breadcrumb--truncate">{{ product.title }}</span> 
   {% endif %}
   {% if template contains 'collection' and collection.handle %}
-    {% if current_tags %}
+    {% if current_tags.empty? == false %}
       {% capture url %}{{ collection.handle | absolute_url }}{% endcapture %}
       {{ collection.title | link_to: url }}
       <span class="divider" aria-hidden="true">&rsaquo;</span>

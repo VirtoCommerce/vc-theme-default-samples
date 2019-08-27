@@ -8,7 +8,7 @@
         <div class="grid">
             <div class="grid-item large--ten-twelfths">
 
-                {% if current_tags %}
+                {% if current_tags.empty? == false %}
                 <h1>{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}</h1>
                 {% else %}
                 <h1>{{ blog.title }}</h1>

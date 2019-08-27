@@ -11,7 +11,7 @@
 
     <title>
         {{ page_title }}
-        {% if current_tags %}
+        {% if current_tags.empty? == false  %}
            {% include 'tags-joined' %}
              - {{ 'general.meta.tags' | t: current_tags_joined }}
         {% endif %}
