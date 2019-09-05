@@ -170,7 +170,7 @@
             {{ review.content }}
             <br>
             <time pubdate datetime="{{ review.created_date | date: '%Y-%m-%d' }}">
-                <em class="text-light">{{ review.created_date | date: format: 'month_day_year' }}</em>
+                <em class="text-light">{{ review.created_date }}</em>
             </time>
         </p>
         {% endfor %}
